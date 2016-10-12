@@ -1,4 +1,5 @@
 # bank_services: Project description in a nutshell.
+Project implemented in C++, using POSIX API. Data structures are 'tailor-made', i didn't use STL.
 
 BankClient:  Sents commands at 'BankServer' and recieves server respond, using tcp.
 
@@ -20,3 +21,5 @@ BankServer:  Provides a web service. 'Master' thread listening at a web socket f
     * Database: Storing and query anwsering about bank accounts,amounts,transfers.
     
   *  DB:  A thread-safe hash-table. Hashing function use accounts' names. Every bucket of hashtable is protected from a different a mutex. Different threads cannot access data from the same bucket at the same time. In post parse stage of the command,an ordered list of mutexes that needs to be locked,is created. Mutex locking in an order from lowest bucket to highest bucket. This is very usefull to avoid any possible deadlock situation.
+
+  * Lists: Implementation of data structures for storing bank clients' information.

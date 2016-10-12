@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <cstring>
+#include <iostream>
 
 bool Is_Int(const char *arg);
 
@@ -74,7 +75,7 @@ public:
     String_List():counter(0){head=NULL;};
     ~String_List();
     void Add(std::string nam){head= new string_node(nam,head); counter++;};
-    int StreamToList(std::stringstream &in); //Returns -1 if a syntax error occured,or else returns the delay (=0 if not provided).
+    int StreamToList(std::stringstream &in); //Returns -1 if a syntax error occured,or returns the delay (=0 if not provided).
     int Count(){return counter;};
 };
 
@@ -95,13 +96,3 @@ public:
 
 
 #endif	/* SLISTS_H */
-
-
-
-
-
-
-
-
-
-

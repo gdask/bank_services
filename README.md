@@ -1,7 +1,7 @@
 # bank_services: Project description in a nutshell.
 Project implemented in C++, using POSIX API. Data structures are 'tailor-made', i didn't use STL.
 
-BankClient:  Sents commands at 'BankServer' and recieves server respond, using tcp.
+BankClient:  Sents commands at 'BankServer' and recieves response, using tcp.
 
 BankServer:  Provides a web service. 'Master' thread listening at a web socket for incoming connections. 'Worker' threads recieve and execute commands from 'BankClient'.
 

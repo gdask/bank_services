@@ -19,7 +19,7 @@ class HashTable{ //A thread safe DB. Provides at system a thread safe service fo
     Int_List* Convert(String_List& arg); //Converts a list of names to an distinct ordered list of buckets to get locked/unlocked.
     void Sleep(clock_t start,clock_t stop,int delay);
     //Primary functions
-    voidaccount_bucketd_Account(std::string name,int start,int delay,std::stringstream &res);
+    void Add_Account(std::string name,int start,int delay,std::stringstream &res);
     void Transfer(std::string source,int amount,int delay,String_List &targets,std::stringstream &res); //Multi & Atomic Transfer
     void Balance(String_List &targets,std::stringstream &res); //Multi & Atomic Balance check
 public:

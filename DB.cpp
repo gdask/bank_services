@@ -19,7 +19,7 @@ HashTable::HashTable(int n){
     lock_arr = new pthread_mutex_t*[buckets];
     int i;
     for(i=0;i<buckets;i++){
-        arr[i] = new Account_List();
+        account_bucket[i] = new Account_List();
         lock_arr[i] = new pthread_mutex_t;
         pthread_mutex_init(lock_arr[i],NULL);
     }

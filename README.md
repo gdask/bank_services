@@ -12,7 +12,7 @@ BankServer:  Provides a web service. 'Master' thread listening at a web socket f
 
 ### 'BankServer' Components
   
-  *  main:  Arguments: -p Server listening port   -s Thread pool size    -q Queue of incomining connections size <br>
+  *  main:  Arguments: -p Server listening port   -s Thread pool size    -q Queue of incoming connections size <br>
             Main checks arguments,setting up the server's listening port and init 'System'.
           
   *  System:  Create,destroy and manage:
@@ -20,6 +20,6 @@ BankServer:  Provides a web service. 'Master' thread listening at a web socket f
     * 'Worker' threads : Receive messege from client,forward it at 'DB', respond to client. Repeat until client disconnects.
     * Database: Storing and query anwsering about bank accounts,amounts,transfers.
     
-  *  DB:  A thread-safe hash-table. Hashing function use accounts' names. Every bucket of hashtable is protected from a different mutex. Different threads cannot access data from the same bucket at the same time. In post parse stage of the command,an ordered list of mutexes that needs to be locked,is created. Mutex locking in order from lowest bucket to highest bucket. This is very usefull to avoid any possible deadlock situation.
+  *  DB:  A thread-safe hash-table. Hashing function use accounts' names. Every bucket of hashtable is protected from a different mutex. Different threads cannot access data from the same bucket at the same time. In post parse stage of the command,an ordered list of mutexes that needs to be locked,is created. Mutex locking in order from lowest bucket to highest bucket. This is very useful to avoid any possible deadlock situation.
 
   * Lists: Implementation of data structures for storing bank clients' information.
